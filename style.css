@@ -188,19 +188,8 @@ nav .nav-links li:hover::after, header nav ul li:hover::after{
         border-radius:40px;
     }
 }
+
 .btn-primary {
-=======
-header nav ul li a:hover::after {
-    width: 100%;
-}
-header nav ul li::after{
-  background: #fff;
-}
-header nav ul li:hover::after{
-  background: #c59b27;
-}
-header .btn-primary {
->>>>>>> local-work
     background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
     color: #fff;
     border: none;
@@ -211,11 +200,8 @@ header .btn-primary {
     font-weight: 600;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-<<<<<<< HEAD
-.btn-primary:hover {
-=======
-header .btn-primary:hover {
->>>>>>> local-work
+
+header .btn-primary:hover, .btn-primary:hover {
     background: linear-gradient(90deg, oklch(0.6 0.11 64.83), oklch(0.45 0.06 60.52));
     transform: translateY(-2px);
 }
@@ -370,18 +356,9 @@ header .btn-primary:hover {
         transform: translateY(-20px);
     }
 }
-<<<<<<< HEAD
-@media(max-width:768px){
-    .hero-section .hero-flex{
-        display: inline;
-    }
-    .hero-section .hero-flex .hero-left{
-        margin-bottom: 10%;
-    }
+.hero-section-responsive {
+    /* fallback responsive tweaks for hero section */
 }
-=======
->>>>>>> local-work
-.sliding-section{
     width:100%;
     overflow:hidden;
     background: oklch(94.585% 0.02324 82.086);
@@ -447,11 +424,7 @@ header .btn-primary:hover {
     color: oklch(0.72 0.14 64.79);
 }
 .campaign-section .campaign-card-flex{
-<<<<<<< HEAD
     display: grid;
-=======
-    display: flex;
->>>>>>> local-work
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 5%;
@@ -557,25 +530,27 @@ header .btn-primary:hover {
     transform: translateY(-6px);
     box-shadow: 0 30px 60px -16px color-mix(in oklab, oklch(0.32 0.04 50) 45%, transparent);
 }
-<<<<<<< HEAD
 @media(max-width:768px){
     .campaign-section .campaign-flex{
-        display: inline;
+        display: block;
     }
     .campaign-section .campaign-card-flex{
-        display: inline;
+        grid-template-columns: 1fr;
+        display: grid;
     }
     .campaign-section .campaign-card-flex .campaign-card{
         width: 100%;
         margin-bottom: 5%;
     }
     .campaign-section .volunteer-grid{
-        display: inline;
+        grid-template-columns: 1fr;
+        display: grid;
     }
     .campaign-section .volunteer-grid .give-card{
         margin-bottom: 5%;
     }
 }
+
 footer{
     background: oklch(0.96 0.01 78.1);
     border-top: 1px solid #f2e9dc;
@@ -749,7 +724,6 @@ footer .terms p{
     margin-bottom: 3%;
    }
 }
-=======
 /* Styles for Causes begins here */
 /* Container */
 .our-causes{
@@ -817,4 +791,3 @@ footer .terms p{
 
 
 /* Styles for Causes ends here */
->>>>>>> local-work
