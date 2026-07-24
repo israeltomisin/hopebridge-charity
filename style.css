@@ -9,13 +9,21 @@ body{
 html {
   scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.72 0.14 64.79);
+  border-radius: 2px;
+}
 *{
     box-sizing: border-box;
 }
 /* Header Styles */
-/* Header / Nav shared styles */
-header, nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,8 +35,7 @@ header, nav {
     top: 0;
     z-index: 1000;
 }
-
-nav h5, header h5 {
+nav h5 {
     margin: 0;
     font-size: 1.25rem;
     background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
@@ -38,25 +45,21 @@ nav h5, header h5 {
     color: transparent;
     text-shadow: 0 2px 10px rgba(255,90,31,0.2);
 }
-
-nav h5 i, header h5 i {
+nav h5 i {
     margin-right: 10px;
     color: oklch(0.72 0.14 64.79);
 }
-
-nav .nav-links, header nav ul {
+nav .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
 }
-
-nav .nav-links li, header nav ul li {
+nav .nav-links li {
     margin: 0 15px;
 }
-
-nav .nav-links li a, header nav ul li a {
+nav .nav-links li a {
     text-decoration: none;
     font-size: 0.875rem;
     color: oklch(18% .02 50);
@@ -64,20 +67,17 @@ nav .nav-links li a, header nav ul li a {
     transition: color 0.3s ease;
     font-family: "Inter", sans-serif;
 }
-
-nav .nav-links li a.custom-link, header nav ul li a.custom-link {
+nav .nav-links li a.custom-link {
     color: oklch(0.45 0.06 60.52);
     text-decoration: underline;
     text-decoration-color: #c59b27;
     text-underline-offset: 4px; 
     text-decoration-thickness: 2px; 
 }
-
-nav .nav-links li a:hover, header nav ul li a:hover {
+nav .nav-links li a:hover {
     color: oklch(0.45 0.06 60.52);
 }
-
-nav .nav-links li a::after, header nav ul li a::after {
+nav .nav-links li a::after {
     content: '';
     display: block;
     width: 0;
@@ -85,15 +85,13 @@ nav .nav-links li a::after, header nav ul li a::after {
     background: #c59b27;
     transition: width 0.3s ease;
 }
-
-nav .nav-links li a:hover::after, header nav ul li a:hover::after {
+nav .nav-links li a:hover::after {
     width: 100%;
 }
-
-nav .nav-links li::after, header nav ul li::after{
+nav .nav-links li::after{
   background: #fff;
 }
-nav .nav-links li:hover::after, header nav ul li:hover::after{
+nav .nav-links li:hover::after{
   background: #c59b27;
 }
 .hamburger{
@@ -188,7 +186,6 @@ nav .nav-links li:hover::after, header nav ul li:hover::after{
         border-radius:40px;
     }
 }
-
 .btn-primary {
     background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
     color: #fff;
@@ -200,8 +197,7 @@ nav .nav-links li:hover::after, header nav ul li:hover::after{
     font-weight: 600;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-
-header .btn-primary:hover, .btn-primary:hover {
+.btn-primary:hover {
     background: linear-gradient(90deg, oklch(0.6 0.11 64.83), oklch(0.45 0.06 60.52));
     transform: translateY(-2px);
 }
@@ -356,9 +352,16 @@ header .btn-primary:hover, .btn-primary:hover {
         transform: translateY(-20px);
     }
 }
-.hero-section-responsive {
-    /* fallback responsive tweaks for hero section */
+@media(max-width:768px){
+    .hero-section .hero-flex{
+        display: inline;
+    }
+    .hero-section .hero-flex .hero-left{
+        margin-bottom: 10%;
+    }
 }
+
+.sliding-section{
     width:100%;
     overflow:hidden;
     background: oklch(94.585% 0.02324 82.086);
@@ -430,7 +433,7 @@ header .btn-primary:hover, .btn-primary:hover {
     margin-bottom: 5%;
 }
 .campaign-section .campaign-card-flex .campaign-card{
-  width: 320px;
+  width: 300px;
   background: #fbf8f3;
   border-radius: 16px;
   overflow: hidden;
@@ -532,21 +535,217 @@ header .btn-primary:hover, .btn-primary:hover {
 }
 @media(max-width:768px){
     .campaign-section .campaign-flex{
-        display: block;
+        display: inline;
     }
     .campaign-section .campaign-card-flex{
-        grid-template-columns: 1fr;
-        display: grid;
+        display: inline;
     }
     .campaign-section .campaign-card-flex .campaign-card{
         width: 100%;
         margin-bottom: 5%;
     }
     .campaign-section .volunteer-grid{
-        grid-template-columns: 1fr;
-        display: grid;
+        display: inline;
     }
     .campaign-section .volunteer-grid .give-card{
+        margin-bottom: 5%;
+    }
+}
+@media(max-width: 1024px){
+    .campaign-section .campaign-flex{
+        display: inline;
+    }
+    .campaign-section .campaign-card-flex{
+        display: inline;
+    }
+    .campaign-section .campaign-card-flex .campaign-card{
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    .campaign-section .volunteer-grid{
+        display: inline;
+    }
+    .campaign-section .volunteer-grid .give-card{
+        margin-bottom: 5%;
+    }
+}
+/* Causes Section */
+.causes-section {
+    padding: 50px 5%;
+}
+.causes-section .our-causes {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 32px;
+}
+.causes-section .our-causes h5 {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.05;
+    color: oklch(0.32 0.04 51.43);
+    font-family: "Playfair Display", serif;
+}
+.causes-section .our-causes h5 .gradient-text {
+    background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-style: oblique;
+}
+.causes-section .our-causes p {
+    margin: 16px auto 0;
+    color: oklch(0.45 0.06 60.52);
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 640px;
+}
+.causes-section .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 40px;
+}
+.causes-section .button-container .btn {
+    border: 1px solid rgba(131, 92, 48, 0.18);
+    background: #fff;
+    color: oklch(0.32 0.04 51.43);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    min-width: 90px;
+}
+.causes-section .button-container .btn:hover {
+    background: oklch(0.98 0.02 92.76);
+    border-color: oklch(0.45 0.06 60.52);
+}
+.causes-section .button-container .btn.active {
+    background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 14px 30px rgba(90, 50, 18, 0.14);
+}
+.causes-section .causes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.causes-section .causes-grid .cause-card {
+    background: #fff;
+    border: 1px solid oklch(0.96 0.01 78.1);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.causes-section .causes-grid .cause-card:hover {
+    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -16px color-mix(in oklab, oklch(0.32 0.04 50) 45%, transparent);
+}
+.causes-section .causes-grid .cause-card .cause-card-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+}
+.causes-section .causes-grid .cause-card .cause-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.causes-section .causes-grid .cause-card:hover .cause-card-image img {
+    transform: scale(1.05);
+}
+.causes-section .causes-grid .cause-card .cause-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.causes-section .causes-grid .cause-card .cause-card-content .cause-category {
+    display: inline-flex;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: oklch(0.98 0.01 87.37);
+    color: oklch(0.45 0.06 60.52);
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: 1px solid oklch(0.94 0.01 84.04);
+    width: fit-content;
+}
+.causes-section .causes-grid .cause-card .cause-card-content h5 {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    color: oklch(0.32 0.04 51.43);
+    font-family: "Playfair Display", serif;
+}
+.causes-section .causes-grid .cause-card .cause-card-content p {
+    margin: 0;
+    color: oklch(0.45 0.06 60.52);
+    font-family: "Inter", sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+.causes-section .causes-grid .cause-card .cause-card-content .progress-bar {
+    height: 11px;
+    background: oklch(0.98 0.01 87.37);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.causes-section .causes-grid .cause-card .cause-card-content .progress-bar .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
+    border-radius: 999px;
+}
+.causes-section .causes-grid .cause-card .cause-card-content .cause-meta {
+    font-size: 0.86rem;
+    color: oklch(0.56 0.03 57.4);
+}
+.causes-section .causes-grid .cause-card .cause-card-content .cause-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, oklch(0.45 0.06 60.52), oklch(0.6 0.11 64.83));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: opacity 0.2s ease;
+}
+.cause-btn:hover {
+    opacity: 0.92;
+}
+@media(max-width: 768px){
+    .causes-section .our-causes{
+        text-align: center;
+    }
+    .causes-section .causes-grid{
+        display: inline;
+    }
+    .causes-section .causes-grid .cause-card{
+        margin-bottom: 5%;
+    }
+}
+@media(max-width: 1024px){
+    .causes-section .our-causes{
+        text-align: center;
+    }
+    .causes-section .causes-grid{
+        display: inline;
+        background-color: red;
+    }
+    .causes-section .causes-grid .cause-card{
         margin-bottom: 5%;
     }
 }
@@ -716,7 +915,7 @@ footer .terms p{
     footer hr{
     border: 0.1px solid oklch(0.72 0.14 64.79);
     margin: 3% 0;
-}
+    }
    footer .all-right-flex{
     display: inline;
    } 
@@ -724,70 +923,21 @@ footer .terms p{
     margin-bottom: 3%;
    }
 }
-/* Styles for Causes begins here */
-/* Container */
-.our-causes{
-    text-align: center;
-    margin-top: 5%;
-}
-.our-causes h1{
-    font-family: "Cormorant Garamond", serif;
-    font-size: 72px;
-    font-weight: 500;
-}
-
-.gradient-text{
-    background: linear-gradient(90deg, #5C3715 0%,#8C5A2B 35%,#B97B36 70%,#D39A52 100%);
-    font-style: italic;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.our-causes p{
-    color: #2c2520;
-    font-size: 18px;
-    margin-top: -40px;
-}
-.button-container {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    animation: fadeIn 0.8s ease-in-out;
-}
-.btn {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid #d1d5db;
-    border-radius: 50px;
-    background-color: #ffffff;
-    color: #6b7280;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.btn:hover {
-    color: #111827;
-    background-color: #f3f4f6;
-}
-.btn.active {
-    background-color: #87512F;
-    color: white;
-    border-color: #87512F;
-}
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
+@media(max-width: 1024px){
+    footer .footer-flex{
+        display: inline;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    footer .footer-flex .footer-left, footer .footer-flex .footer-center, footer .footer-flex .footer-right{
+        margin-bottom: 5%;
     }
+    footer hr{
+    border: 0.1px solid oklch(0.72 0.14 64.79);
+    margin: 3% 0;
+    }
+   footer .all-right-flex{
+    display: inline;
+   } 
+   footer .hopebridge{
+    margin-bottom: 3%;
+   }
 }
-
-
-/* Styles for Causes ends here */

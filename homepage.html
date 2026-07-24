@@ -11,17 +11,50 @@
 <body>
     <!-- Header -->
     <header>
-        <h5><i class="fas fa-heart"></i> Hopebridge</h5>
         <nav>
-            <ul>
-                <li><a href="homepage.html" class="custom-link">Home</a></li>
-                <li><a href="causes.html">Causes</a></li>
-                <li><a href="about.html">About</a></li>
+            <h5><i class="fas fa-heart"></i> HopeBridge</h5>
+
+            <ul class="nav-links">
+                <li><a href="/homepage.html" class="active">Home</a></li>
+                <li><a href="/causes.html">Causes</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+
+            <button class="btn-primary">
+                <i class="fa-regular fa-heart"></i> Donate
+            </button>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
-        <button class="btn-primary"><i class="fa-regular fa-heart"></i> Donate</button>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+
+            <div class="mobile-header">
+                <h5><i class="fas fa-heart"></i> HopeBridge</h5>
+
+                <i class="fa-solid fa-xmark close-btn" id="closeBtn"></i>
+            </div>
+
+            <ul>
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href="/causes.html">Causes</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <button class="btn-primary mobile-btn">
+                <i class="fa-regular fa-heart"></i> Donate
+            </button>
+
+        </div>
     </header>
+
     <!-- Main Content -->
     <section>
         <div class="hero-section">
@@ -100,7 +133,7 @@
                         
                         <!-- Progress Bar Container -->
                         <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                            <div class="progress-fill"></div>
                         </div>
                         
                         <p class="card-meta">72% of $25,000</p>
@@ -168,5 +201,73 @@
             </div>
         </div>
     </section>
+    <footer>
+        <div class="footer-flex">
+            <div class="footer-left">
+                <h5><i class="fas fa-heart"></i> HopeBridge</h5>
+                <p>Small acts. Big hope. A global community delivering aid with dignity since 2014.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-center">
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="/Homepage.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+                    <li><a href="/Homepage.html"><i class="fa-solid fa-chevron-right"></i>Causes</a></li>
+                    <li><a href="/Homepage.html"><i class="fa-solid fa-chevron-right"></i>About</a></li>
+                    <li><a href="/Homepage.html"><i class="fa-solid fa-chevron-right"></i>Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Contact Info</h5>
+                <div class="icon-text-flex">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="text-icon">
+                        <h5>Message Us</h5>
+                        <p>israeltomisin001@gmail.com</p>
+                    </div>
+                </div>
+                <div class="icon-text-flex">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="text-icon">
+                        <h5>Phone</h5>
+                        <p>+2349026744296, +2347053359903</p>
+                    </div>
+                </div>
+                <div class="icon-text-flex">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="text-icon">
+                        <h5>Location</h5>
+                        <p>Lagos State, Nigeria</p>
+                    </div>
+                </div>
+                <div class="icon-text-flex">
+                    <i class="fa-regular fa-clock"></i>
+                    <div class="text-icon">
+                        <h5>Working Hours:</h5>
+                        <p>Mon - Fri | 8AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="all-right-flex">
+            <div class="hopebridge"></div>
+            <div class="privacy-flex">
+                <div class="privacy">
+                    <p>Privacy Policy</p>
+                </div>
+                <div class="terms">
+                    <p>Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/main.js"></script>
 </body>
 </html>
